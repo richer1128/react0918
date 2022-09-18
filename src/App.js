@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Notification from "./Notification";
+import Popup from "./Popup";
+import "./App.css";
+import LikeOfButton from "./LikeOfButton";
+function goToNextPage() {
+  window.location.href = "https://www.104.com.tw/";
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Popup onClose={goToNextPage}>
+        <Notification title="this is" message=" angel " severity="general" />
+        <Notification title="that is " message="dog" severity="important" />
+        <Notification title="those is " message="girl " severity="urgent" />
+        Placeholder notice content.
+      </Popup>
+      <LikeOfButton/>
+      <LikeOfButton liked={true} likeCount={0}/>
     </div>
   );
 }
